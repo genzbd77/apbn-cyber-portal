@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APBn Cyber Portals - এপিবিএন সাইবার পোর্টাল</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Amiri & Hind Siliguri -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        apbn: {
+                            bg: '#0D1527',
+                            card: '#162238',
+                            cyan: '#06B6D4',
+                            blue: '#2563EB',
+                            lightBg: '#1E2D4A',
+                            accent: '#38BDF8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Hind Siliguri', 'sans-serif'],
+                        bismillah: ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background: linear-gradient(180deg, #0B132B 0%, #111D38 50%, #0B132B 100%);
+            color: #F1F5F9;
+            min-height: 100vh;
+        }
+
+        /* Slide in animations for Header */
+        @keyframes slideFromLeft {
+            0% { transform: translateX(-100px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideFromRight {
+            0% { transform: translateX(100px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .animate-slide-left {
+            animation: slideFromLeft 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-slide-right {
+            animation: slideFromRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .bismillah-text {
+            font-family: 'Amiri', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Glassmorphism Digital Cards */
+        .glass-card {
+            background: rgba(22, 34, 56, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border-radius: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(6, 182, 212, 0.5);
+            box-shadow: 0 12px 40px 0 rgba(6, 182, 212, 0.2);
+        }
+
+        /* Marquee Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .animate-ticker {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 22s linear infinite;
+        }
+
+        .animate-ticker:hover {
+            animation-play-state: paused;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B132B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #06B6D4;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
+
+    <!-- 1. Bismillah Top Bar -->
+    <div class="bg-slate-950/90 border-b border-cyan-500/20 py-1 text-center">
+        <span class="bismillah-text text-amber-300 font-bold drop-shadow">
+            بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+        </span>
+    </div>
+
+    <!-- Live Urgent Alert Ticker -->
+    <div class="bg-gradient-to-r from-blue-900/90 via-cyan-900/90 to-indigo-900/90 border-b border-cyan-500/30 py-2 px-4 flex items-center gap-3 text-xs md:text-sm text-cyan-100">
+        <span class="bg-rose-600 text-white font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1.5 shrink-0 text-xs shadow-lg animate-pulse">
+            <i class="fa-solid fa-bullhorn"></i> জরুরি বার্তা
+        </span>
+        <div class="overflow-hidden w-full relative">
+            <div class="animate-ticker text-slate-100 font-medium">
+                🚨 লটারি বা পুরষ্কার জেতার ভুয়া লিংকে বিকাশ/নগদ পিন দেবেন না। ⚠️ পার্ট-টাইম অনলাইন চাকরির লোভে অপরিচিত অ্যাকাউন্টে টাকা পাঠানো বন্ধ রাখুন। 🛡️ এপিবিএন সাইবার হেল্পলাইন: ০১৭৬৯-৬৯০০০০
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Animated Header with APBn Logo -->
+    <header class="bg-gradient-to-b from-slate-950 via-slate-900 to-indigo-950 border-b border-cyan-500/30 py-6 px-4 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <!-- Left Logo with Slide-In Animation -->
+            <div class="flex items-center gap-4 animate-slide-left shrink-0">
+                <div class="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-to-tr from-cyan-400 via-blue-600 to-indigo-600 p-1 shadow-2xl shadow-cyan-500/30 flex items-center justify-center">
+                    <div class="w-full h-full bg-slate-950 rounded-xl flex flex-col items-center justify-center p-2 text-center relative border border-cyan-400/30">
+                        <!-- SVG / Icon representation of APBn Shield Logo -->
+                        <div class="relative flex items-center justify-center">
+                            <i class="fa-solid fa-shield-halved text-4xl text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]"></i>
+                            <i class="fa-solid fa-star text-amber-400 text-xs absolute -top-1"></i>
+                        </div>
+                        <span class="text-[9px] font-extrabold text-cyan-300 tracking-wider mt-1 uppercase">APBn Cyber</span>
+                    </div>
+                </div>
+                <div class="md:hidden text-left">
+                    <span class="text-xs font-bold text-cyan-400 tracking-wider block">BANGLADESH POLICE</span>
+                    <span class="text-sm font-bold text-white">ARMED POLICE BATTALION</span>
+                </div>
+            </div>
+
+            <!-- Right Title Side with Slide-In Animation -->
+            <div class="text-center md:text-right animate-slide-right flex-grow">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-blue-400 tracking-tight">
+                    Welcome to APBn cyber portals
+                </h1>
+                <p class="text-xs sm:text-sm font-semibold text-cyan-200 mt-1.5 flex items-center justify-center md:justify-end gap-2">
+                    <i class="fa-solid fa-shield-cat text-amber-400"></i>
+                    অ্যার্মড পুলিশ ব্যাটালিয়ন (APBn) - সুরক্ষিত সাইবার স্পেস, নিরাপদ নাগরিক
+                </p>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- 3. Main Content: ALL OPTIONS IN A SINGLE VERTICAL STACK (ONE AFTER ANOTHER) -->
+    <main class="max-w-4xl mx-auto px-4 py-8 space-y-8 flex-grow w-full">
+
+        <!-- SECTION 1: District Hotline Checker -->
+        <section class="glass-card p-6 md:p-8 border-t-4 border-t-cyan-400">
+            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/60 pb-4">
+                <div class="p-3.5 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-2xl text-white shadow-lg shadow-cyan-500/30">
+                    <i class="fa-solid fa-map-location-dot text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">
+                        ১. জেলা ভিত্তিক এপিবিএন (APBn) সাইবার সেল নম্বর চেকার
+                    </h2>
+                    <p class="text-xs md:text-sm text-cyan-200">আপনার জেলা সার্চ করে সরাসরি ব্যাটালিয়নের হটলাইন ও বিবরণ জানুন</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-cyan-300 mb-1.5">জেলা সার্চ করুন (বাংলা / English):</label>
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-cyan-400"></i>
+                        <input type="text" id="districtSearchInput" oninput="filterDistrictOptions()" placeholder="যেমন: ঢাকা, চট্টগ্রাম, সিলেট, বগুড়া, কক্সবাজার..." class="w-full bg-slate-900/90 border border-slate-700 rounded-2xl pl-11 pr-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 shadow-inner">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-cyan-300 mb-1.5">ড্রপডাউন থেকে নির্বাচন করুন:</label>
+                    <select id="districtSelect" onchange="lookupDistrictAPBn()" class="w-full bg-slate-900/90 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400">
+                        <option value="">-- জেলা নির্বাচন করুন --</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="districtResultCard" class="hidden mt-6 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-cyan-400/50 p-6 rounded-2xl shadow-2xl relative overflow-hidden">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-4 border-b border-slate-800">
+                    <div>
+                        <span id="districtBadge" class="bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 text-xs font-bold px-3 py-1 rounded-full">জেলা</span>
+                        <h3 id="districtResultName" class="text-2xl font-bold text-white mt-1">জেলা তথ্য</h3>
+                        <p id="districtBattalionName" class="text-sm font-semibold text-cyan-300 mt-0.5">ব্যাটালিয়ন শাখা</p>
+                    </div>
+                    <a id="callBattalionBtn" href="tel:" class="w-full md:w-auto text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-sm rounded-xl transition shadow-lg shadow-cyan-500/25">
+                        <i class="fa-solid fa-phone-volume mr-2"></i> সরাসরি কল করুন
+                    </a>
+                </div>
+
+                <div class="space-y-3 mt-4 text-xs md:text-sm">
+                    <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800 flex justify-between items-center">
+                        <span class="text-slate-300"><i class="fa-solid fa-phone text-cyan-400 mr-2"></i> হটলাইন নম্বর:</span>
+                        <span id="battalionHotline" class="font-bold text-cyan-300">০১৭৬৯-৬৯০০০১</span>
+                    </div>
+                    <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800 flex justify-between items-center">
+                        <span class="text-slate-300"><i class="fa-solid fa-envelope text-cyan-400 mr-2"></i> অফিসিয়াল ইমেইল:</span>
+                        <span id="battalionEmail" class="font-bold text-white break-all">cyber@police.gov.bd</span>
+                    </div>
+                    <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800 flex justify-between items-center">
+                        <span class="text-slate-300"><i class="fa-solid fa-location-dot text-cyan-400 mr-2"></i> হেডকোয়ার্টার্স ঠিকানা:</span>
+                        <span id="battalionAddress" class="font-bold text-white">ঠিকানা</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: MFS Fraud Number Checker & Form underneath -->
+        <section class="glass-card p-6 md:p-8 border-t-4 border-t-rose-500 space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
+                <div class="p-3.5 bg-gradient-to-tr from-rose-500 to-pink-600 rounded-2xl text-white shadow-lg shadow-rose-500/30">
+                    <i class="fa-solid fa-mobile-screen-button text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">২. MFS প্রতারক নম্বর চেকার (বিকাশ, নগদ, রকেট)</h2>
+                    <p class="text-xs md:text-sm text-rose-200">সন্দেহজনক নম্বর সার্চ করুন এবং ঠিক নিচে নতুন রিপোর্ট জমা দিন</p>
+                </div>
+            </div>
+
+            <!-- Search Box -->
+            <div class="space-y-2">
+                <label class="block text-xs font-bold text-slate-300">নম্বর সার্চ করুন:</label>
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <input type="text" id="mfsSearchInput" placeholder="উদাহরণ: 01700000000" class="w-full bg-slate-900/90 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-rose-400">
+                    <button onclick="searchMFSNumber()" class="px-6 py-3 bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-400 hover:to-pink-500 text-white font-bold text-sm rounded-2xl transition shrink-0 shadow-lg shadow-rose-500/20">
+                        <i class="fa-solid fa-magnifying-glass mr-1"></i> নম্বর সার্চ
+                    </button>
+                </div>
+                <div id="mfsSearchResult" class="hidden p-4 rounded-2xl text-xs md:text-sm mt-3"></div>
+            </div>
+
+            <!-- Form DIRECTLY underneath Search Box -->
+            <div class="pt-6 border-t border-slate-800">
+                <h3 class="text-base font-bold text-white mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-plus text-rose-400"></i> নতুন রিপোর্ট যোগ করুন (MFS Fraud)
+                </h3>
+                <form onsubmit="handleMFSReportSubmit(event)" class="space-y-3">
+                    <div>
+                        <label class="block text-xs text-slate-300 mb-1">প্রতারকের মোবাইল নম্বর *</label>
+                        <input type="text" id="mfsRepNum" required placeholder="018XXXXXXXX" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-300 mb-1">প্রতারণার ক্যাটেগরি *</label>
+                        <select id="mfsRepType" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white">
+                            <option value="ভুয়া পিন/ওটিপি ফাঁদ">ভুয়া পিন/ওটিপি ফাঁদ</option>
+                            <option value="ভুল ক্যাশ-ইন রিফান্ড স্ক্যাম">ভুল ক্যাশ-ইন রিফান্ড স্ক্যাম</option>
+                            <option value="পুরস্কার/লটারি প্রতারণা">পুরস্কার/লটারি প্রতারণা</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-300 mb-1">সংক্ষিপ্ত বিবরণ</label>
+                        <input type="text" id="mfsRepDesc" placeholder="ঘটনার সংক্ষিপ্ত বিবরণ..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white">
+                    </div>
+                    <div class="text-right pt-2">
+                        <button type="submit" class="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-rose-600 to-pink-600 text-white font-bold text-xs rounded-xl shadow-lg">
+                            <i class="fa-solid fa-paper-plane mr-1"></i> রিপোর্ট সেভ করুন
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Fake Online Shop Checker & Form underneath -->
+        <section class="glass-card p-6 md:p-8 border-t-4 border-t-purple-500 space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
+                <div class="p-3.5 bg-gradient-to-tr from-purple-500 to-indigo-600 rounded-2xl text-white shadow-lg shadow-purple-500/30">
+                    <i class="fa-solid fa-store text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">৩. ভুয়া অনলাইন শপ ও ফেইসবুক পেজ চেকার</h2>
+                    <p class="text-xs md:text-sm text-purple-200">অনলাইন পেজের লিংক যাচাই করুন ও ভুয়া পেজের তথ্য জমা দিন</p>
+                </div>
+            </div>
+
+            <!-- Search Box -->
+            <div class="space-y-2">
+                <label class="block text-xs font-bold text-slate-300">পেজের লিংক বা নাম সার্চ করুন:</label>
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <input type="text" id="shopSearchInput" placeholder="facebook.com/example-shop" class="w-full bg-slate-900/90 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-400">
+                    <button onclick="searchShop()" class="px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 text-white font-bold text-sm rounded-2xl transition shrink-0 shadow-lg shadow-purple-500/20">
+                        <i class="fa-solid fa-magnifying-glass mr-1"></i> পেজ সার্চ
+                    </button>
+                </div>
+                <div id="shopSearchResult" class="hidden p-4 rounded-2xl text-xs md:text-sm mt-3"></div>
+            </div>
+
+            <!-- Form DIRECTLY underneath Search Box -->
+            <div class="pt-6 border-t border-slate-800">
+                <h3 class="text-base font-bold text-white mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-plus text-purple-400"></i> নতুন রিপোর্ট যোগ করুন (Online Shop)
+                </h3>
+                <form onsubmit="handleShopReportSubmit(event)" class="space-y-3">
+                    <div>
+                        <label class="block text-xs text-slate-300 mb-1">পেজের লিংক / নাম *</label>
+                        <input type="text" id="shopRepUrl" required placeholder="facebook.com/fake-shop" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-300 mb-1">অভিযোগের প্রকার *</label>
+                        <select id="shopRepCategory" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white">
+                            <option value="টাকা নিয়ে পণ্য না দেওয়া">টাকা নিয়ে পণ্য না দেওয়া</option>
+                            <option value="নকল বা বাজে পণ্য ডেলিভারি">নকল বা বাজে পণ্য ডেলিভারি</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-300 mb-1">অন্যান্য বিবরণ</label>
+                        <input type="text" id="shopRepDetails" placeholder="ক্ষতির পরিমাণ বা বিবরণ..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white">
+                    </div>
+                    <div class="text-right pt-2">
+                        <button type="submit" class="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-xs rounded-xl shadow-lg">
+                            <i class="fa-solid fa-paper-plane mr-1"></i> শপ রিপোর্ট সেভ করুন
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Citizen Protection & Tools -->
+        <section class="glass-card p-6 md:p-8 border-t-4 border-t-emerald-400 space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
+                <div class="p-3.5 bg-gradient-to-tr from-emerald-500 to-teal-600 rounded-2xl text-white shadow-lg shadow-emerald-500/30">
+                    <i class="fa-solid fa-user-shield text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">৪. নাগরিক সুরক্ষা ও স্মার্ট অনলাইন টুলস</h2>
+                    <p class="text-xs md:text-sm text-emerald-200">ফিশিং লিংক চেকার, পাসওয়ার্ড স্ট্রেন্থ ও সোশ্যাল মিডিয়া রিকভারি</p>
+                </div>
+            </div>
+
+            <!-- Phishing Link Analyzer -->
+            <div class="bg-slate-900/90 border border-slate-800 p-5 rounded-2xl space-y-3">
+                <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+                    <i class="fa-solid fa-link"></i> ফিশিং লিংক / ফেক ওয়েবসাইট চেকার
+                </h3>
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <input type="text" id="phishingUrlInput" placeholder="https://example-phishing-link.com" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-400">
+                    <button onclick="analyzePhishingUrl()" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition shrink-0 shadow-md">
+                        লিংক বিশ্লেষণ
+                    </button>
+                </div>
+                <div id="phishingResult" class="hidden p-3 rounded-xl text-xs bg-slate-950 border border-slate-800"></div>
+            </div>
+
+            <!-- Password & Data Breach Checker -->
+            <div class="bg-slate-900/90 border border-slate-800 p-5 rounded-2xl space-y-4">
+                <h3 class="text-sm font-bold text-cyan-400 flex items-center gap-2">
+                    <i class="fa-solid fa-lock"></i> পাসওয়ার্ড স্ট্রেন্থ ও ডেটা লিক (Breach) চেকার
+                </h3>
+
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-xs text-slate-300 mb-1">পাসওয়ার্ড শক্তি পরীক্ষা:</label>
+                        <input type="password" id="passInput" oninput="checkPasswordStrength()" placeholder="পাসওয়ার্ড টাইপ করুন..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white">
+                        <div class="w-full bg-slate-800 h-2 rounded-full mt-2 overflow-hidden">
+                            <div id="passMeter" class="h-full w-0 bg-rose-500 transition-all duration-300"></div>
+                        </div>
+                        <span id="passStatus" class="text-xs text-slate-400 mt-1 block">শক্তি: টাইপ করুন</span>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-800">
+                        <label class="block text-xs text-slate-300 mb-1">ইমেইল ডেটা লিক ট্র্যাকার:</label>
+                        <div class="flex gap-2">
+                            <input type="email" id="emailBreachInput" placeholder="yourmail@gmail.com" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white">
+                            <button onclick="checkEmailBreach()" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold rounded-xl shadow">চেক</button>
+                        </div>
+                        <p id="breachResult" class="text-xs mt-2 hidden"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recovery Guide & Deepfake Report -->
+            <div class="space-y-4">
+                <div class="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl space-y-2">
+                    <h4 class="text-xs font-bold text-amber-400"><i class="fa-solid fa-key mr-1"></i> সোশ্যাল মিডিয়া অ্যাকাউন্ট রিকভারি গাইড (FB/WhatsApp/IG/IMO)</h4>
+                    <select id="platformSelect" onchange="showRecoveryGuide()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
+                        <option value="fb">Facebook রিকভারি ধাপসমূহ</option>
+                        <option value="wa">WhatsApp অ্যাকাউন্ট সিকিউরিটি</option>
+                        <option value="ig">Instagram আইডি রিকভারি</option>
+                        <option value="imo">IMO হ্যাকিং সমাধান</option>
+                    </select>
+                    <div id="recoverySteps" class="p-3 bg-slate-950 rounded-xl text-xs text-slate-300 leading-relaxed border border-slate-800"></div>
+                </div>
+
+                <div class="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl space-y-2">
+                    <h4 class="text-xs font-bold text-rose-400"><i class="fa-solid fa-user-ninja mr-1"></i> ডিপফেক ও ছবি/ভিডিও ব্ল্যাকমেইল গাইড</h4>
+                    <p class="text-xs text-slate-300">ছবি বা ভিডিও বিকৃত করে ব্ল্যাকমেইল করা হলে সাথে সাথে জরুরি সাহায্য নিন।</p>
+                    <button onclick="openDeepfakeModal()" class="w-full py-2.5 bg-gradient-to-r from-rose-600 to-red-600 text-white font-bold text-xs rounded-xl shadow-lg mt-2">
+                        ব্ল্যাকমেইল রিপোর্ট ফরম খুলুন
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Emergency AI Bot & Digital GD -->
+        <section class="glass-card p-6 md:p-8 border-t-4 border-t-cyan-500 space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
+                <div class="p-3.5 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-2xl text-white shadow-lg shadow-cyan-500/30">
+                    <i class="fa-solid fa-headset text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">৫. জরুরি এআই চ্যাটবট, জিপিএস ও ডিজিটাল জিডি</h2>
+                    <p class="text-xs md:text-sm text-cyan-200">APBn Cyber Bot এবং ডিজিটাল জিডি অ্যাসিস্ট্যান্ট</p>
+                </div>
+            </div>
+
+            <!-- AI Chatbot Box -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 flex flex-col h-[320px]">
+                <div class="flex items-center gap-2 pb-2 border-b border-slate-800">
+                    <i class="fa-solid fa-robot text-cyan-400 text-lg"></i>
+                    <span class="text-xs font-bold text-white">APBn Cyber Bot (২৪/৭ এআই সাপোর্ট)</span>
+                </div>
+                <div id="chatLog" class="flex-grow overflow-y-auto my-3 space-y-2 text-xs pr-1">
+                    <div class="bg-slate-950 border border-slate-800 text-slate-200 p-2.5 rounded-xl max-w-[85%]">
+                        স্বাগতম! আমি APBn Cyber Bot। আপনার যেকোনো সাইবার বিষয়ক প্রশ্ন লিখুন।
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <input type="text" id="chatInput" onkeydown="if(event.key==='Enter') sendChatMessage()" placeholder="মেসেজ লিখুন..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
+                    <button onclick="sendChatMessage()" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl text-xs font-bold shrink-0 shadow">
+                        পাঠান
+                    </button>
+                </div>
+            </div>
+
+            <!-- GPS and Digital GD Buttons vertically stacked -->
+            <div class="space-y-4">
+                <div class="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl space-y-2">
+                    <h4 class="text-xs font-bold text-cyan-400"><i class="fa-solid fa-location-arrow mr-1"></i> জিপিএস দিয়ে কাছের থানা ও APBn সাইবার সেন্টার</h4>
+                    <button onclick="getUserGPSLocation()" class="w-full py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs rounded-xl shadow-lg">
+                        কাছের সাপোর্ট সেন্টার খুঁজুন
+                    </button>
+                    <div id="gpsResultList" class="text-xs mt-2"></div>
+                </div>
+
+                <div class="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl space-y-2">
+                    <h4 class="text-xs font-bold text-blue-400"><i class="fa-solid fa-file-contract mr-1"></i> ডিজিটাল জিডি (Digital GD) অ্যাসিস্ট্যান্ট</h4>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <a href="https://gd.police.gov.bd/" target="_blank" class="w-full sm:w-1/2 text-center py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl shadow">
+                            অফিশিয়াল জিডি পোর্টাল
+                        </a>
+                        <button onclick="openGDTemplateModal()" class="w-full sm:w-1/2 py-2.5 bg-slate-800 hover:bg-slate-700 border border-blue-400/40 text-blue-300 font-bold text-xs rounded-xl">
+                            জিডি নমুনা খসড়া ফরম
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Quiz & Certificate Generator -->
+        <section class="glass-card p-6 md:p-8 border-t-4 border-t-amber-400 space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
+                <div class="p-3.5 bg-gradient-to-tr from-amber-500 to-yellow-600 rounded-2xl text-black shadow-lg shadow-amber-500/30">
+                    <i class="fa-solid fa-award text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">৬. সাইবার সচেতনতা কুইজ ও ডিজিটাল সনদপত্র</h2>
+                    <p class="text-xs md:text-sm text-amber-200">কুইজ খেলে নিজের নামে কাস্টমাইজড সার্টিফিকেট ডাউনলোড করুন</p>
+                </div>
+            </div>
+
+            <div id="quizStartBlock" class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 space-y-3">
+                <label class="block text-xs font-bold text-slate-300">সনদপত্রে আপনার নাম লিখুন:</label>
+                <input type="text" id="participantName" placeholder="যেমন: মোঃ আজহারুল ইসলাম" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white">
+                <button onclick="startQuiz()" class="w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-xl transition shadow-lg">
+                    কুইজ শুরু করুন
+                </button>
+            </div>
+
+            <div id="quizContainer" class="hidden space-y-4">
+                <div id="questionsList" class="space-y-3"></div>
+                <button onclick="submitQuiz()" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-lg">
+                    উত্তর জমা দিন ও ডিজিটাল সনদপত্র দেখুন
+                </button>
+            </div>
+
+            <div id="certificateContainer" class="hidden text-center space-y-4">
+                <div class="inline-block border-2 border-amber-400/50 rounded-2xl overflow-hidden shadow-2xl max-w-full bg-slate-950 p-2">
+                    <canvas id="certCanvas" width="800" height="550" class="w-full h-auto rounded-xl max-w-[800px]"></canvas>
+                </div>
+                <div>
+                    <button onclick="downloadCertificate()" class="px-6 py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs rounded-xl shadow-lg">
+                        <i class="fa-solid fa-download mr-1.5"></i> সনদপত্র ডাউনলোড করুন (PNG)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: Cyber Helpdesk for Women & Children -->
+        <section class="glass-card p-6 md:p-8 border-t-4 border-t-rose-400 space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
+                <div class="p-3.5 bg-gradient-to-tr from-rose-500 to-pink-600 rounded-2xl text-white shadow-lg shadow-rose-500/30">
+                    <i class="fa-solid fa-venus-mars text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">৭. নারী ও শিশুদের বিশেষ সাইবার হেল্পডেস্ক</h2>
+                    <p class="text-xs md:text-sm text-pink-200">সম্পূর্ণ গোপনীয়তার সাথে সাহায্য গ্রহণ ও অভিযোগ জমা</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleWomenReport(event)" class="space-y-3 bg-slate-900/90 p-5 rounded-2xl border border-slate-800">
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">আপনার নাম/ছদ্মনাম (ঐচ্ছিক)</label>
+                    <input type="text" id="wName" placeholder="গোপন রাখতে ফাঁকা রাখুন" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">যোগাযোগের মোবাইল বা ইমেইল *</label>
+                    <input type="text" required id="wContact" placeholder="যোগাযোগের নম্বর/ইমেইল" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">সমস্যার বিষয় *</label>
+                    <select id="wSubject" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white">
+                        <option value="সাইবার বুলিং">সাইবার বুলিং ও কটূক্তি</option>
+                        <option value="ফেক আইডি হেনস্তা">ফেক আইডি দিয়ে হেনস্তা</option>
+                        <option value="ছবি ব্ল্যাকমেইল">ছবি দিয়ে ব্ল্যাকমেইল</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">ঘটনার বিবরণ *</label>
+                    <textarea required id="wDetails" rows="3" placeholder="ঘটনাটির বিবরণ লিখুন..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white"></textarea>
+                </div>
+                <button type="submit" class="w-full py-2.5 bg-gradient-to-r from-rose-600 to-pink-600 text-white font-bold text-xs rounded-xl shadow-lg">
+                    নিরাপদে অভিযোগ জমা দিন
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Deepfake Modal -->
+    <div id="deepfakeModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-6 max-w-lg w-full space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="text-base font-bold text-white"><i class="fa-solid fa-shield-virus text-rose-400 mr-2"></i> ব্ল্যাকমেইল জরুরি রিপোর্ট</h3>
+                <button onclick="closeDeepfakeModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div class="text-xs text-slate-300 space-y-3">
+                <input type="text" id="blackmailLink" placeholder="প্রতারকের প্রোফাইল লিংক" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
+                <textarea id="blackmailText" rows="3" placeholder="সংক্ষিপ্ত বিবরণ..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white"></textarea>
+            </div>
+            <div class="flex justify-end gap-2">
+                <button onclick="closeDeepfakeModal()" class="px-4 py-2 bg-slate-800 text-slate-300 text-xs rounded-xl">বন্ধ করুন</button>
+                <button onclick="submitBlackmailReport()" class="px-4 py-2 bg-rose-600 text-white text-xs font-bold rounded-xl">জমা দিন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- GD Template Modal -->
+    <div id="gdModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-6 max-w-xl w-full space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="text-base font-bold text-white">ডিজিটাল জিডি আবেদন খসড়া ফরম</h3>
+                <button onclick="closeGDTemplateModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2 leading-relaxed">
+                <p>বরাবর,</p>
+                <p>ভারপ্রাপ্ত কর্মকর্তা, [সংশ্লিষ্ট থানা], [জেলা] ।</p>
+                <p>বিষয়: [আইডি হ্যাক / MFS প্রতারণা] সংক্রান্ত সাধারণ ডায়েরী (জিডি) করার আবেদন।</p>
+                <p>মহোদয়, আমি [আপনার নাম], পিতা: [...], ঠিকানা: [...]। বিনীত নিবেদন এই যে...</p>
+            </div>
+            <div class="text-right">
+                <button onclick="closeGDTemplateModal()" class="px-4 py-2 bg-cyan-600 text-white text-xs font-bold rounded-xl">ঠিক আছে</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-6 px-4 mt-12">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-cyan-400"></i>
+                <span>© ২০২৬ এপিবিএন সাইবার পোর্টাল | অ্যার্মড পুলিশ ব্যাটালিয়ন (APBn) বাংলাদেশ পুলিশ</span>
+            </div>
+            <div class="font-bold text-slate-200 bg-slate-900 px-4 py-1.5 rounded-full border border-slate-800 shadow-md">
+                Made by <span class="text-cyan-400">Azharul</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const APBN_DISTRICT_DATABASE = [
+            { district: "Chattogram", districtBn: "চট্টগ্রাম", battalion: "৯ম আর্মড পুলিশ ব্যাটালিয়ন (9 APBn)", hotline: "০১৭৬৯-৬৯০০০৯", email: "cyber.9apbn@police.gov.bd", address: "বায়েজীদ বোস্তামী, চট্টগ্রাম" },
+            { district: "Mymensingh", districtBn: "ময়মনসিংহ", battalion: "২য় আর্মড পুলিশ ব্যাটালিয়ন (2 APBn)", hotline: "০১৭৬৯-৬৯০০০২", email: "cyber.2apbn@police.gov.bd", address: "মুক্তাগাছা, ময়মনসিংহ" },
+            { district: "Dhaka", districtBn: "ঢাকা", battalion: "১ম ও ১১শ আর্মড পুলিশ ব্যাটালিয়ন (1 & 11 APBn)", hotline: "০১৭৬৯-৬৯০০০১", email: "cyber.1apbn@police.gov.bd", address: "উত্তরা মডেল টাউন, ঢাকা" },
+            { district: "Sylhet", districtBn: "সিলেট", battalion: "৭ম আর্মড পুলিশ ব্যাটালিয়ন (7 APBn)", hotline: "০১৭৬৯-৬৯০০০৭", email: "cyber.7apbn@police.gov.bd", address: "লালাবাজার, দক্ষিণ সুরমা, সিলেট" },
+            { district: "Bogura", districtBn: "বগুড়া", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "cyber.4apbn@police.gov.bd", address: "চেলোপাড়া, বগুড়া সদর" },
+            { district: "Khulna", districtBn: "খুলনা", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "cyber.3apbn@police.gov.bd", address: "শিরোমণি, খুলনা" },
+            { district: "Cox's Bazar", districtBn: "কক্সবাজার", battalion: "১৪শ ও ১৬শ আর্মড পুলিশ ব্যাটালিয়ন (14 & 16 APBn)", hotline: "০১৭৬৯-৬৯০০১৪", email: "cyber.14apbn@police.gov.bd", address: "উখিয়া, কক্সবাজার" },
+            { district: "Barishal", districtBn: "বরিশাল", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬৯-৬৯০০১০", email: "cyber.10apbn@police.gov.bd", address: "চরকাউয়া, বরিশাল" },
+            { district: "Rangpur", districtBn: "রংপুর", battalion: "১৩শ আর্মড পুলিশ ব্যাটালিয়ন (13 APBn)", hotline: "০১৭৬৯-৬৯০০১৩", email: "cyber.13apbn@police.gov.bd", address: "ধাপ, রংপুর সদর" }
+        ];
+
+        let mfsDatabase = [
+            { number: "01711000111", type: "ভুয়া পিন/ওটিপি ফাঁদ", reports: 8 },
+            { number: "01822999000", type: "অনলাইন শপ পেমেন্ট স্ক্যাম", reports: 5 }
+        ];
+
+        let shopDatabase = [
+            { url: "facebook.com/fake-gadget-shop", name: "Fake Gadget Shop", status: "ব্ল্যাকলিস্টেড", reports: 14 }
+        ];
+
+        const QUIZ_DATA = [
+            { q: "১. ওটিপি (OTP) বা পিন নম্বর অন্য কারো সাথে শেয়ার করা কি নিরাপদ?", options: ["সম্পূর্ণ নিরাপদ", "কখনোই নয়, একদম অনুচিত", "পরিচিতজন হলে সমস্যা নেই"], ans: 1 },
+            { q: "২. কোনো লিংকে ক্লিক করার আগে কী পরীক্ষা করা উচিত?", options: ["ডোমেইন ও ইউআরএল (HTTPS)", "ইন্টারনেট স্পিড", "কোনোটিই নয়"], ans: 0 },
+            { q: "৩. ভুল করে টাকা এসেছে দাবি করলে প্রথম কাজ কী?", options: ["সাথে সাথে সেন্ড মানি করা", "নিজের MFS অ্যাপ স্টেটমেন্ট বা অফিসিয়াল কোড ডায়াল করে ব্যালেন্স চেক করা", "পিন বলে দেওয়া"], ans: 1 }
+        ];
+
+        window.onload = function() {
+            populateDistrictDropdown(APBN_DISTRICT_DATABASE);
+            showRecoveryGuide();
+            renderQuizQuestions();
+        };
+
+        function populateDistrictDropdown(items) {
+            const select = document.getElementById('districtSelect');
+            select.innerHTML = '<option value="">-- জেলা নির্বাচন করুন --</option>';
+            items.forEach(item => {
+                const opt = document.createElement('option');
+                opt.value = item.district;
+                opt.textContent = `${item.districtBn} (${item.district})`;
+                select.appendChild(opt);
+            });
+        }
+
+        function filterDistrictOptions() {
+            const search = document.getElementById('districtSearchInput').value.toLowerCase().trim();
+            const filtered = APBN_DISTRICT_DATABASE.filter(i => 
+                i.district.toLowerCase().includes(search) || i.districtBn.includes(search)
+            );
+            populateDistrictDropdown(filtered);
+            if (filtered.length === 1) {
+                document.getElementById('districtSelect').value = filtered[0].district;
+                lookupDistrictAPBn();
+            }
+        }
+
+        function lookupDistrictAPBn() {
+            const selectedVal = document.getElementById('districtSelect').value;
+            const card = document.getElementById('districtResultCard');
+            if (!selectedVal) {
+                card.classList.add('hidden');
+                return;
+            }
+
+            const data = APBN_DISTRICT_DATABASE.find(item => item.district === selectedVal);
+            if (data) {
+                document.getElementById('districtBadge').textContent = `জেলা: ${data.districtBn}`;
+                document.getElementById('districtResultName').textContent = `${data.districtBn} জেলা সাইবার তথ্য`;
+                document.getElementById('districtBattalionName').textContent = data.battalion;
+                document.getElementById('battalionHotline').textContent = data.hotline;
+                document.getElementById('battalionEmail').textContent = data.email;
+                document.getElementById('battalionAddress').textContent = data.address;
+                document.getElementById('callBattalionBtn').href = `tel:${data.hotline}`;
+                card.classList.remove('hidden');
+            }
+        }
+
+        function searchMFSNumber() {
+            const num = document.getElementById('mfsSearchInput').value.trim();
+            const res = document.getElementById('mfsSearchResult');
+            if (!num) return;
+
+            const found = mfsDatabase.find(i => i.number.includes(num));
+            res.classList.remove('hidden');
+            if (found) {
+                res.className = "p-4 rounded-2xl text-xs md:text-sm bg-rose-950 border border-rose-500/50 text-rose-200 mt-3";
+                res.innerHTML = `⚠️ <strong>সতর্কতা!</strong> এই নম্বরে ${found.reports} টি প্রতারণার রিপোর্ট জমা আছে। ধরণ: ${found.type}`;
+            } else {
+                res.className = "p-4 rounded-2xl text-xs md:text-sm bg-emerald-950 border border-emerald-500/50 text-emerald-200 mt-3";
+                res.innerHTML = `✅ এই নম্বরে পূর্বে কোনো রিপোর্ট পাওয়া যায়নি।`;
+            }
+        }
+
+        function handleMFSReportSubmit(e) {
+            e.preventDefault();
+            const num = document.getElementById('mfsRepNum').value;
+            const type = document.getElementById('mfsRepType').value;
+            mfsDatabase.push({ number: num, type: type, reports: 1 });
+            alert('MFS প্রতারক নম্বর সংক্রান্ত রিপোর্ট সংরক্ষিত হয়েছে!');
+            document.getElementById('mfsRepNum').value = '';
+        }
+
+        function searchShop() {
+            const query = document.getElementById('shopSearchInput').value.trim().toLowerCase();
+            const res = document.getElementById('shopSearchResult');
+            if (!query) return;
+
+            const found = shopDatabase.find(i => i.url.toLowerCase().includes(query) || i.name.toLowerCase().includes(query));
+            res.classList.remove('hidden');
+            if (found) {
+                res.className = "p-4 rounded-2xl text-xs md:text-sm bg-purple-950 border border-purple-500/50 text-purple-200 mt-3";
+                res.innerHTML = `🚨 <strong>স্ট্যাটাস: ${found.status}</strong> (${found.name}) - ${found.reports} টি অভিযোগ পাওয়া গেছে।`;
+            } else {
+                res.className = "p-4 rounded-2xl text-xs md:text-sm bg-slate-900 border border-slate-700 text-slate-300 mt-3";
+                res.innerHTML = `ℹ️ এই পেজের বিষয়ে পূর্বে কোনো রিপোর্ট জমা হয়নি।`;
+            }
+        }
+
+        function handleShopReportSubmit(e) {
+            e.preventDefault();
+            const url = document.getElementById('shopRepUrl').value;
+            shopDatabase.push({ url: url, name: url, status: "সন্দেহজনক", reports: 1 });
+            alert('অনলাইন শপ সংক্রান্ত রিপোর্ট সংরক্ষিত হয়েছে!');
+            document.getElementById('shopRepUrl').value = '';
+        }
+
+        function analyzePhishingUrl() {
+            const url = document.getElementById('phishingUrlInput').value.trim();
+            const res = document.getElementById('phishingResult');
+            if (!url) return;
+
+            res.classList.remove('hidden');
+            if (url.includes('http://') || url.includes('.tk') || url.includes('login') || url.includes('offer')) {
+                res.className = "p-3 rounded-xl text-xs bg-rose-950 border border-rose-500/40 text-rose-200";
+                res.innerHTML = `⚠️ <strong>উচ্চ ঝুঁকিপূর্ণ লিংক!</strong> কোনো তথ্য বা পিন প্রদান করবেন না।`;
+            } else {
+                res.className = "p-3 rounded-xl text-xs bg-emerald-950 border border-emerald-500/40 text-emerald-200";
+                res.innerHTML = `✅ <strong>লিংকটি নিরাপদ মনে হচ্ছে।</strong> ডোমেন মিলিয়ে নিন।`;
+            }
+        }
+
+        function showRecoveryGuide() {
+            const platform = document.getElementById('platformSelect').value;
+            const container = document.getElementById('recoverySteps');
+            const guides = {
+                fb: "১. facebook.com/hacked এ যান।<br>২. 'My Account Is Compromised' বিকল্প দিয়ে NID জমা দিন।",
+                wa: "১. WhatsApp রি-ইনস্টল করে ওটিপি আনুন।<br>২. 2-Step Verification PIN রিসেট করুন।",
+                ig: "১. 'Get help logging in' বিকল্প ব্যবহার করুন।<br>২. সেলফি ভিডিও ভেরিফিকেশন জমা দিন।",
+                imo: "১. IMO Account Settings এ অপরিচিত ডিভাইস লগআউট করুন।"
+            };
+            container.innerHTML = guides[platform];
+        }
+
+        function checkPasswordStrength() {
+            const pass = document.getElementById('passInput').value;
+            const meter = document.getElementById('passMeter');
+            const status = document.getElementById('passStatus');
+
+            if (!pass) {
+                meter.style.width = '0%';
+                status.textContent = 'শক্তি: টাইপ করুন';
+                return;
+            }
+
+            let score = 0;
+            if (pass.length >= 8) score += 30;
+            if (/[A-Z]/.test(pass)) score += 20;
+            if (/[0-9]/.test(pass)) score += 20;
+            if (/[^A-Za-z0-9]/.test(pass)) score += 30;
+
+            meter.style.width = score + '%';
+            if (score < 40) {
+                meter.className = "h-full bg-rose-500 transition-all duration-300";
+                status.textContent = "শক্তি: দুর্বল";
+            } else if (score < 80) {
+                meter.className = "h-full bg-amber-500 transition-all duration-300";
+                status.textContent = "শক্তি: মাঝারি";
+            } else {
+                meter.className = "h-full bg-emerald-500 transition-all duration-300";
+                status.textContent = "শক্তি: অত্যন্ত শক্তিশালী!";
+            }
+        }
+
+        function checkEmailBreach() {
+            const email = document.getElementById('emailBreachInput').value;
+            const res = document.getElementById('breachResult');
+            if (!email) return;
+
+            res.classList.remove('hidden');
+            res.className = "text-xs mt-2 text-emerald-400 font-bold";
+            res.innerHTML = `✅ ${email} এ কোনো ডেটা লিক তথ্য পাওয়া যায়নি।`;
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const chatLog = document.getElementById('chatLog');
+            const userMsg = document.createElement('div');
+            userMsg.className = "bg-cyan-600 text-white p-2.5 rounded-xl max-w-[85%] ml-auto text-xs shadow";
+            userMsg.textContent = text;
+            chatLog.appendChild(userMsg);
+
+            input.value = '';
+            chatLog.scrollTop = chatLog.scrollHeight;
+
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = "bg-slate-950 border border-slate-800 text-slate-200 p-2.5 rounded-xl max-w-[85%] text-xs";
+                botMsg.textContent = "ধন্যবাদ। জরুরি প্রয়োজনে সরাসরি এপিবিএন সাইবার হেল্পলাইন ০১৭৬৯-৬৯০০০০ নম্বরে কল দিন।";
+                chatLog.appendChild(botMsg);
+                chatLog.scrollTop = chatLog.scrollHeight;
+            }, 500);
+        }
+
+        function getUserGPSLocation() {
+            const resContainer = document.getElementById('gpsResultList');
+            resContainer.innerHTML = '<div class="p-2.5 bg-slate-950 text-xs text-cyan-400 rounded-xl border border-slate-800"><i class="fa-solid fa-spinner animate-spin mr-2"></i> জিপিএস লোকেশন নেওয়া হচ্ছে...</div>';
+
+            setTimeout(() => {
+                resContainer.innerHTML = `
+                    <div class="p-3 bg-slate-950 border border-slate-800 rounded-xl text-xs space-y-1 mt-2">
+                        <div class="flex justify-between font-bold text-white">
+                            <span>১. এপিবিএন সাইবার হেডকোয়ার্টার্স (APBn HQ)</span>
+                            <span class="text-cyan-400">১.২ কি.মি.</span>
+                        </div>
+                        <p class="text-slate-400">উত্তরা, ঢাকা | কল: ০১৭৬৯-৬৯০০০১</p>
+                    </div>
+                `;
+            }, 800);
+        }
+
+        function renderQuizQuestions() {
+            const list = document.getElementById('questionsList');
+            list.innerHTML = '';
+            QUIZ_DATA.forEach((item, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = "p-3.5 bg-slate-950 border border-slate-800 rounded-xl text-xs space-y-2";
+                let optsHtml = '';
+                item.options.forEach((opt, oIdx) => {
+                    optsHtml += `
+                        <label class="flex items-center gap-2 text-slate-300 cursor-pointer">
+                            <input type="radio" name="q_${index}" value="${oIdx}" class="text-amber-500">
+                            ${opt}
+                        </label>
+                    `;
+                });
+                qDiv.innerHTML = `<p class="font-bold text-white">${item.q}</p><div class="space-y-1.5 mt-1">${optsHtml}</div>`;
+                list.appendChild(qDiv);
+            });
+        }
+
+        function startQuiz() {
+            const name = document.getElementById('participantName').value.trim();
+            if (!name) {
+                alert('অনুগ্রহ করে আপনার নাম টাইপ করুন।');
+                return;
+            }
+            document.getElementById('quizStartBlock').classList.add('hidden');
+            document.getElementById('quizContainer').classList.remove('hidden');
+        }
+
+        function submitQuiz() {
+            const name = document.getElementById('participantName').value.trim() || "সম্মানিত নাগরিক";
+            document.getElementById('quizContainer').classList.add('hidden');
+            document.getElementById('certificateContainer').classList.remove('hidden');
+            generateCanvasCertificate(name);
+        }
+
+        function generateCanvasCertificate(userName) {
+            const canvas = document.getElementById('certCanvas');
+            const ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = '#0B132B';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.strokeStyle = '#F59E0B';
+            ctx.lineWidth = 8;
+            ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+            ctx.strokeStyle = '#06B6D4';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(30, 30, canvas.width - 60, canvas.height - 60);
+
+            ctx.fillStyle = '#38BDF8';
+            ctx.font = 'bold 26px Hind Siliguri, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('অ্যার্মড পুলিশ ব্যাটালিয়ন (APBn)', canvas.width / 2, 85);
+
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 22px Hind Siliguri, sans-serif';
+            ctx.fillText('সাইবার সচেতনতা ডিজিটাল সনদপত্র', canvas.width / 2, 130);
+
+            ctx.fillStyle = '#94A3B8';
+            ctx.font = '16px Hind Siliguri, sans-serif';
+            ctx.fillText('এই মর্মে প্রত্যয়ন করা যাচ্ছে যে,', canvas.width / 2, 185);
+
+            ctx.fillStyle = '#F59E0B';
+            ctx.font = 'bold 32px Hind Siliguri, sans-serif';
+            ctx.fillText(userName, canvas.width / 2, 240);
+
+            ctx.fillStyle = '#E2E8F0';
+            ctx.font = '16px Hind Siliguri, sans-serif';
+            ctx.fillText('সফলভাবে সাইবার সচেতনতা কুইজ সম্পন্ন করেছেন।', canvas.width / 2, 290);
+
+            ctx.fillStyle = '#38BDF8';
+            ctx.font = 'bold 14px Hind Siliguri, sans-serif';
+            ctx.fillText('পরিচালক (সাইবার উইং), এপিবিএন', canvas.width / 2, 485);
+        }
+
+        function downloadCertificate() {
+            const canvas = document.getElementById('certCanvas');
+            const image = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.href = image;
+            link.download = 'APBn_Cyber_Certificate.png';
+            link.click();
+        }
+
+        function openDeepfakeModal() { document.getElementById('deepfakeModal').classList.remove('hidden'); }
+        function closeDeepfakeModal() { document.getElementById('deepfakeModal').classList.add('hidden'); }
+        function submitBlackmailReport() {
+            alert('আপনার রিপোর্ট জমা নেওয়া হয়েছে।');
+            closeDeepfakeModal();
+        }
+
+        function openGDTemplateModal() { document.getElementById('gdModal').classList.remove('hidden'); }
+        function closeGDTemplateModal() { document.getElementById('gdModal').classList.add('hidden'); }
+
+        function handleWomenReport(e) {
+            e.preventDefault();
+            alert('আপনার অভিযোগ গোপনীয়তার সাথে জমা হয়েছে।');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
