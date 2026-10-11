@@ -127,7 +127,7 @@
         </span>
         <div class="overflow-hidden w-full relative">
             <div class="animate-ticker text-slate-100 font-medium">
-                🚨 লটারি বা পুরষ্কার জেতার ভুয়া লিংকে বিকাশ/নগদ পিন দেবেন না। ⚠️ পার্ট-টাইম অনলাইন চাকরির লোভে অপরিচিত অ্যাকাউন্টে টাকা পাঠানো বন্ধ রাখুন। 🛡️ এপিবিএন সাইবার হেল্পলাইন: ০১৭৬৯-৬৯০০০০
+                🚨 লটারি বা পুরষ্কার জেতার ভুয়া লিংকে বিকাশ/নগদ পিন দেবেন না। ⚠️ পার্ট-টাইম অনলাইন চাকরির লোভে অপরিচিত অ্যাকাউন্টে টাকা পাঠানো বন্ধ রাখুন। 🛡️ এপিবিএন সাইবার হেল্পলাইন: ০১৩২০-১৮৮৩৫১
             </div>
         </div>
     </div>
@@ -601,18 +601,152 @@
         </div>
     </footer>
 
-    <script>
+  <script>
         const APBN_DISTRICT_DATABASE = [
-            { district: "Chattogram", districtBn: "চট্টগ্রাম", battalion: "৯ম আর্মড পুলিশ ব্যাটালিয়ন (9 APBn)", hotline: "০১৭৬৯-৬৯০০০৯", email: "9apbn.int@police.gov.bd", address: "বায়েজীদ বোস্তামী, চট্টগ্রাম" },
-            { district: "Mymensingh, Banderban", districtBn: "ময়মনসিংহ", battalion: "২য় আর্মড পুলিশ ব্যাটালিয়ন (2 APBn)", hotline: "০১৭৬৯-৬৯০০০২", email: "2apbn.int@police.gov.bd", address: "মুক্তাগাছা, ময়মনসিংহ" },
-            { district: "Dhaka", districtBn: "ঢাকা", battalion: "১ম, ৫ম, ১১শ, ১২শ, ১৩শ আর্মড পুলিশ ব্যাটালিয়ন (1, 5, 11, 12, & 13 APBn)", hotline: "১ এপিবিএন-০১৭৬৯-৬৯০০০১, ৫ এপিবিএন-০১৩২০১৮৮***, ১১ এপিবিএন-০১৩২০১৮৮***, ১২ এপিবিএন-০১৩২০১৮৮***, ১৩ এপিবিএন- ০১৩২০১৮৮***", email: "1apbn.int@police.gov.bd, 5apbn.int@police.gov.bd, 11apbn.int@police.gov.bd, 12apbn.int@police.gov.bd, 13apbn.int@police.gov.bd", address: "সেক্টর-২, উত্তরা, ঢাকা" },
-            { district: "Sylhet", districtBn: "সিলেট", battalion: "৭ম আর্মড পুলিশ ব্যাটালিয়ন (7 APBn)", hotline: "০১৭৬৯-৬৯০০০৭", email: "7apbn.int@police.gov.bd", address: "লালাবাজার, দক্ষিণ সুরমা, সিলেট" },
-            { district: "Bogura", districtBn: "বগুড়া", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া" },
-            { district: "Khulna", districtBn: "খুলনা", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা" },
-            { district: "Cox's Bazar", districtBn: "কক্সবাজার", battalion: "৮ম, ১৪শ ও ১৬শ আর্মড পুলিশ ব্যাটালিয়ন (8, 14 & 16 APBn)", hotline: "০১৭৬৯-৬৯০০১৪", email: "14apbn.int@police.gov.bd", address: "উখিয়া/টেকনাফ, কক্সবাজার" },
-            { district: "Barishal", districtBn: "বরিশাল", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬৯-৬৯০০১০", email: "10apbn.int@police.gov.bd", address: " বরিশাল" },
-            { district: "Rangpur", districtBn: "রংপুর", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া" }
+            // ঢাকা বিভাগ (১ম, ৫ম, ১১শ, ১২শ ও ১৩শ এপিবিএন)
+            { district: "Dhaka", districtBn: "ঢাকা", battalion: "১ম, ৫ম, ১১শ, ১২শ ও ১৩শ এপিবিএন", hotline: "০১৭৬৯-৬৯০০০১", email: "1apbn.int@police.gov.bd", address: "সেক্টর-২, উত্তরা, ঢাকা", coveredDistricts: ["ঢাকা", "গাজীপুর", "নারায়ণগঞ্জ", "টাঙ্গাইল", "নরসিংদী", "মুন্সিগঞ্জ", "মানিকগঞ্জ"] },
+            { district: "Gazipur", districtBn: "গাজীপুর", battalion: "১ম, ৫ম, ১১শ, ১২শ ও ১৩শ এপিবিএন", hotline: "০১৭৬৯-৬৯০০০১", email: "1apbn.int@police.gov.bd", address: "সেক্টর-২, উত্তরা, ঢাকা", coveredDistricts: ["ঢাকা", "গাজীপুর", "নারায়ণগঞ্জ", "টাঙ্গাইল", "নরসিংদী", "মুন্সিগঞ্জ", "মানিকগঞ্জ"] },
+            { district: "Narayanganj", districtBn: "নারায়ণগঞ্জ", battalion: "১ম, ৫ম, ১১শ, ১২শ ও ১৩শ এপিবিএন", hotline: "০১৭৬৯-৬৯০০০১", email: "1apbn.int@police.gov.bd", address: "সেক্টর-২, উত্তরা, ঢাকা", coveredDistricts: ["ঢাকা", "গাজীপুর", "নারায়ণগঞ্জ", "টাঙ্গাইল", "নরসিংদী", "মুন্সিগঞ্জ", "মানিকগঞ্জ"] },
+            { district: "Tangail", districtBn: "টাঙ্গাইল", battalion: "১ম, ৫ম, ১১শ, ১২শ ও ১৩শ এপিবিএন", hotline: "০১৭৬৯-৬৯০০০১", email: "1apbn.int@police.gov.bd", address: "সেক্টর-২, উত্তরা, ঢাকা", coveredDistricts: ["ঢাকা", "গাজীপুর", "নারায়ণগঞ্জ", "টাঙ্গাইল", "নরসিংদী", "মুন্সিগঞ্জ", "মানিকগঞ্জ"] },
+            { district: "Narsingdi", districtBn: "নরসিংদী", battalion: "১ম, ৫ম, ১১শ, ১২শ ও ১৩শ এপিবিএন", hotline: "০১৭৬৯-৬৯০০০১", email: "1apbn.int@police.gov.bd", address: "সেক্টর-২, উত্তরা, ঢাকা", coveredDistricts: ["ঢাকা", "গাজীপুর", "নারায়ণগঞ্জ", "টাঙ্গাইল", "নরসিংদী", "মুন্সিগঞ্জ", "মানিকগঞ্জ"] },
+            { district: "Munshiganj", districtBn: "মুন্সিগঞ্জ", battalion: "১ম, ৫ম, ১১শ, ১২শ ও ১৩শ এপিবিএন", hotline: "০১৭৬৯-৬৯০০০১", email: "1apbn.int@police.gov.bd", address: "সেক্টর-২, উত্তরা, ঢাকা", coveredDistricts: ["ঢাকা", "গাজীপুর", "নারায়ণগঞ্জ", "টাঙ্গাইল", "নরসিংদী", "মুন্সিগঞ্জ", "মানিকগঞ্জ"] },
+            { district: "Manikganj", districtBn: "মানিকগঞ্জ", battalion: "১ম, ৫ম, ১১শ, ১২শ ও ১৩শ এপিবিএন", hotline: "০১৭৬৯-৬৯০০০১", email: "1apbn.int@police.gov.bd", address: "সেক্টর-২, উত্তরা, ঢাকা", coveredDistricts: ["ঢাকা", "গাজীপুর", "নারায়ণগঞ্জ", "টাঙ্গাইল", "নরসিংদী", "মুন্সিগঞ্জ", "মানিকগঞ্জ"] },
+
+            // চট্টগ্রাম বিভাগ (৯ম এপিবিএন)
+            { district: "Chattogram", districtBn: "চট্টগ্রাম", battalion: "৯ম আর্মড পুলিশ ব্যাটালিয়ন (9 APBn)", hotline: "০১৭৬৯-৬৯০০০৯", email: "9apbn.int@police.gov.bd", address: "বায়েজীদ বোস্তামী, চট্টগ্রাম", coveredDistricts: ["চট্টগ্রাম", "কুমিল্লা", "ফেনী", "নোয়াখালী", "লক্ষ্মীপুর", "ব্রাহ্মণবাড়িয়া", "চাঁদপুর"] },
+            { district: "Cumilla", districtBn: "কুমিল্লা", battalion: "৯ম আর্মড পুলিশ ব্যাটালিয়ন (9 APBn)", hotline: "০১৭৬৯-৬৯০০০৯", email: "9apbn.int@police.gov.bd", address: "বায়েজীদ বোস্তামী, চট্টগ্রাম", coveredDistricts: ["চট্টগ্রাম", "কুমিল্লা", "ফেনী", "নোয়াখালী", "লক্ষ্মীপুর", "ব্রাহ্মণবাড়িয়া", "চাঁদপুর"] },
+            { district: "Feni", districtBn: "ফেনী", battalion: "৯ম আর্মড পুলিশ ব্যাটালিয়ন (9 APBn)", hotline: "০১৭৬৯-৬৯০০০৯", email: "9apbn.int@police.gov.bd", address: "বায়েজীদ বোস্তামী, চট্টগ্রাম", coveredDistricts: ["চট্টগ্রাম", "কুমিল্লা", "ফেনী", "নোয়াখালী", "লক্ষ্মীপুর", "ব্রাহ্মণবাড়িয়া", "চাঁদপুর"] },
+            { district: "Noakhali", districtBn: "নোয়াখালী", battalion: "৯ম আর্মড পুলিশ ব্যাটালিয়ন (9 APBn)", hotline: "০১৭৬৯-৬৯০০০৯", email: "9apbn.int@police.gov.bd", address: "বায়েজীদ বোস্তামী, চট্টগ্রাম", coveredDistricts: ["চট্টগ্রাম", "কুমিল্লা", "ফেনী", "নোয়াখালী", "লক্ষ্মীপুর", "ব্রাহ্মণবাড়িয়া", "চাঁদপুর"] },
+            { district: "Lakshmipur", districtBn: "লক্ষ্মীপুর", battalion: "৯ম আর্মড পুলিশ ব্যাটালিয়ন (9 APBn)", hotline: "০১৭৬৯-৬৯০০০৯", email: "9apbn.int@police.gov.bd", address: "বায়েজীদ বোস্তামী, চট্টগ্রাম", coveredDistricts: ["চট্টগ্রাম", "কুমিল্লা", "ফেনী", "নোয়াখালী", "লক্ষ্মীপুর", "ব্রাহ্মণবাড়িয়া", "চাঁদপুর"] },
+            { district: "Brahmanbaria", districtBn: "ব্রাহ্মণবাড়িয়া", battalion: "৯ম আর্মড পুলিশ ব্যাটালিয়ন (9 APBn)", hotline: "০১৭৬৯-৬৯০০০৯", email: "9apbn.int@police.gov.bd", address: "বায়েজীদ বোস্তামী, চট্টগ্রাম", coveredDistricts: ["চট্টগ্রাম", "কুমিল্লা", "ফেনী", "নোয়াখালী", "লক্ষ্মীপুর", "ব্রাহ্মণবাড়িয়া", "চাঁদপুর"] },
+            { district: "Chandpur", districtBn: "চাঁদপুর", battalion: "৯ম আর্মড পুলিশ ব্যাটালিয়ন (9 APBn)", hotline: "০১৭৬৯-৬৯০০০৯", email: "9apbn.int@police.gov.bd", address: "বায়েজীদ বোস্তামী, চট্টগ্রাম", coveredDistricts: ["চট্টগ্রাম", "কুমিল্লা", "ফেনী", "নোয়াখালী", "লক্ষ্মীপুর", "ব্রাহ্মণবাড়িয়া", "চাঁদপুর"] },
+
+            // পার্বত্য চট্টগ্রাম অঞ্চল (১৮শ, ৬ষ্ঠ, ২য় ও কক্সবাজার ব্যাটালিয়নসমূহ)
+            { district: "Rangamati", districtBn: "রাঙ্গামাটি", battalion: "১৮শ আর্মড পুলিশ ব্যাটালিয়ন (18 APBn)", hotline: "০১৭৬৯-৬৯০০১৮", email: "18apbn.int@police.gov.bd", address: "রাঙ্গামাটি পার্বত্য জেলা", coveredDistricts: ["রাঙ্গামাটি"] },
+            { district: "Khagrachhari", districtBn: "খাগড়াছড়ি", battalion: "৬ষ্ঠ আর্মড পুলিশ ব্যাটালিয়ন (6 APBn)", hotline: "০১৭৬৯-৬৯০০০৬", email: "6apbn.int@police.gov.bd", address: "মহালছড়ি, খাগড়াছড়ি", coveredDistricts: ["খাগড়াছড়ি"] },
+            { district: "Bandarban", districtBn: "বান্দরবান", battalion: "২য় আর্মড পুলিশ ব্যাটালিয়ন (2 APBn)", hotline: "০১৭৬৯-৬৯০০০২", email: "2apbn.int@police.gov.bd", address: "বান্দরবান পার্বত্য জেলা", coveredDistricts: ["বান্দরবান"] },
+            { district: "Cox's Bazar", districtBn: "কক্সবাজার", battalion: "৮ম, ১৪শ ও ১৬শ এপিবিএন", hotline: "০১৭৬৯-৬৯০০১৪", email: "14apbn.int@police.gov.bd", address: "উখিয়া/টেকনাফ, কক্সবাজার", coveredDistricts: ["কক্সবাজার"] },
+
+            // খুলনা বিভাগ ও পদ্মা সেতু সংযোগ জেলাসমূহ (৩য় এপিবিএন)
+            { district: "Khulna", districtBn: "খুলনা", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Jashore", districtBn: "যশোর", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Satkhira", districtBn: "সাতক্ষীরা", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Bagerhat", districtBn: "বাগেরহাট", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Jhenaidah", districtBn: "ঝিনাইদহ", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Kushtia", districtBn: "কুষ্টিয়া", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Magura", districtBn: "মাগুরা", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Meherpur", districtBn: "মেহেরপুর", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Narail", districtBn: "নড়াইল", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Chuadanga", districtBn: "চুয়াডাঙ্গা", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Faridpur", districtBn: "ফরিদপুর", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Madaripur", districtBn: "মাদারীপুর", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Gopalganj", districtBn: "গোপালগঞ্জ", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Rajbari", districtBn: "রাজবাড়ী", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+            { district: "Shariatpur", districtBn: "শরীয়তপুর", battalion: "৩য় আর্মড পুলিশ ব্যাটালিয়ন (3 APBn)", hotline: "০১৭৬৯-৬৯০০০৩", email: "3apbn.int@police.gov.bd", address: "শিরোমণি, খুলনা", coveredDistricts: ["খুলনা", "যশোর", "সাতক্ষীরা", "বাগেরহাট", "ঝিনাইদহ", "কুষ্টিয়া", "মাগুরা", "মেহেরপুর", "নড়াইল", "চুয়াডাঙ্গা", "ফরিদপুর", "মাদারীপুর", "গোপালগঞ্জ", "রাজবাড়ী", "শরীয়তপুর"] },
+
+            // রাজশাহী ও রংপুর বিভাগ (৪র্থ এপিবিএন)
+            { district: "Bogura", districtBn: "বগুড়া", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Rajshahi", districtBn: "রাজশাহী", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Pabna", districtBn: "পাবনা", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Sirajganj", districtBn: "সিরাজগঞ্জ", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Naogaon", districtBn: "নওগাঁ", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Natore", districtBn: "নাটোর", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Chapai Nawabganj", districtBn: "চাঁপাইনবাবগঞ্জ", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Joypurhat", districtBn: "জয়পুরহাট", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Rangpur", districtBn: "রংপুর", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Dinajpur", districtBn: "দিনাজপুর", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Gaibandha", districtBn: "গাইবান্ধা", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Kurigram", districtBn: "কুড়িগ্রাম", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Lalmonirhat", districtBn: "লালমনিরহাট", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Nilphamari", districtBn: "নীলফামারী", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Panchagarh", districtBn: "পঞ্চগড়", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+            { district: "Thakurgaon", districtBn: "ঠাকুরগাঁও", battalion: "৪র্থ আর্মড পুলিশ ব্যাটালিয়ন (4 APBn)", hotline: "০১৭৬৯-৬৯০০০৪", email: "4apbn.int@police.gov.bd", address: "নিশান্দারা, বগুড়া", coveredDistricts: ["বগুড়া", "রাজশাহী", "পাবনা", "সিরাজগঞ্জ", "নওগাঁ", "নাটোর", "চাঁপাইনবাবগঞ্জ", "জয়পুরহাট", "রংপুর", "দিনাজপুর", "গাইবান্ধা", "কুড়িগ্রাম", "লালমনিরহাট", "নীলফামারী", "পঞ্চগড়", "ঠাকুরগাঁও"] },
+
+            // ময়মনসিংহ বিভাগ (২য় এপিবিএন)
+            { district: "Mymensingh", districtBn: "ময়মনসিংহ", battalion: "২য় আর্মড পুলিশ ব্যাটালিয়ন (2 APBn)", hotline: "০১৭৬৯-৬৯০০০২", email: "2apbn.int@police.gov.bd", address: "মুক্তাগাছা, ময়মনসিংহ", coveredDistricts: ["ময়মনসিংহ", "জামালপুর", "নেত্রকোণা", "শেরপুর"] },
+            { district: "Jamalpur", districtBn: "জামালপুর", battalion: "২য় আর্মড পুলিশ ব্যাটালিয়ন (2 APBn)", hotline: "০১৭৬৯-৬৯০০০২", email: "2apbn.int@police.gov.bd", address: "মুক্তাগাছা, ময়মনসিংহ", coveredDistricts: ["ময়মনসিংহ", "জামালপুর", "নেত্রকোণা", "শেরপুর"] },
+            { district: "Netrokona", districtBn: "নেত্রকোণা", battalion: "২য় আর্মড পুলিশ ব্যাটালিয়ন (2 APBn)", hotline: "০১৭৬৯-৬৯০০০২", email: "2apbn.int@police.gov.bd", address: "মুক্তাগাছা, ময়মনসিংহ", coveredDistricts: ["ময়মনসিংহ", "জামালপুর", "নেত্রকোণা", "শেরপুর"] },
+            { district: "Sherpur", districtBn: "শেরপুর", battalion: "২য় আর্মড পুলিশ ব্যাটালিয়ন (2 APBn)", hotline: "০১৭৬৯-৬৯০০০২", email: "2apbn.int@police.gov.bd", address: "মুক্তাগাছা, ময়মনসিংহ", coveredDistricts: ["ময়মনসিংহ", "জামালপুর", "নেত্রকোণা", "শেরপুর"] },
+
+            // সিলেট বিভাগ (৭ম এপিবিএন)
+            { district: "Sylhet", districtBn: "সিলেট", battalion: "৭ম আর্মড পুলিশ ব্যাটালিয়ন (7 APBn)", hotline: "০১৭৬৯-৬৯০০০৭", email: "7apbn.int@police.gov.bd", address: "লালাবাজার, দক্ষিণ সুরমা, সিলেট", coveredDistricts: ["সিলেট", "মৌলভীবাজার", "হবিগঞ্জ", "সুনামগঞ্জ"] },
+            { district: "Moulvibazar", districtBn: "মৌলভীবাজার", battalion: "৭ম আর্মড পুলিশ ব্যাটালিয়ন (7 APBn)", hotline: "০১৭৬৯-৬৯০০০৭", email: "7apbn.int@police.gov.bd", address: "লালাবাজার, দক্ষিণ সুরমা, সিলেট", coveredDistricts: ["সিলেট", "মৌলভীবাজার", "হবিগঞ্জ", "সুনামগঞ্জ"] },
+            { district: "Habiganj", districtBn: "হবিগঞ্জ", battalion: "৭ম আর্মড পুলিশ ব্যাটালিয়ন (7 APBn)", hotline: "০১৭৬৯-৬৯০০০৭", email: "7apbn.int@police.gov.bd", address: "লালাবাজার, দক্ষিণ সুরমা, সিলেট", coveredDistricts: ["সিলেট", "মৌলভীবাজার", "হবিগঞ্জ", "সুনামগঞ্জ"] },
+            { district: "Sunamganj", districtBn: "সুনামগঞ্জ", battalion: "৭ম আর্মড পুলিশ ব্যাটালিয়ন (7 APBn)", hotline: "০১৭৬৯-৬৯০০০৭", email: "7apbn.int@police.gov.bd", address: "লালাবাজার, দক্ষিণ সুরমা, সিলেট", coveredDistricts: ["সিলেট", "মৌলভীবাজার", "হবিগঞ্জ", "সুনামগঞ্জ"] },
+
+            // বরিশাল বিভাগ (১০ম এপিবিএন)
+            { district: "Barishal", districtBn: "বরিশাল", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬৯-৬৯০০১০", email: "10apbn.int@police.gov.bd", address: "চরকাউয়া, বরিশাল", coveredDistricts: ["বরিশাল", "ভোলা", "পটুয়াখালী", "পিরোজপুর", "বরগুনা", "ঝালকাঠি"] },
+            { district: "Bhola", districtBn: "ভোলা", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬৯-৬৯০০১০", email: "10apbn.int@police.gov.bd", address: "চরকাউয়া, বরিশাল", coveredDistricts: ["বরিশাল", "ভোলা", "পটুয়াখালী", "পিরোজপুর", "বরগুনা", "ঝালকাঠি"] },
+            { district: "Patuakhali", districtBn: "পটুয়াখালী", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬৯-৬৯০০১০", email: "10apbn.int@police.gov.bd", address: "চরকাউয়া, বরিশাল", coveredDistricts: ["বরিশাল", "ভোলা", "পটুয়াখালী", "পিরোজপুর", "বরগুনা", "ঝালকাঠি"] },
+            { district: "Pirojpur", districtBn: "পিরোজপুর", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬9-690010", email: "10apbn.int@police.gov.bd", address: "চরকাউয়া, বরিশাল", coveredDistricts: ["বরিশাল", "ভোলা", "পটুয়াখালী", "পিরোজপুর", "বরগুনা", "ঝালকাঠি"] },
+            { district: "Barguna", districtBn: "বরগুনা", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬৯-৬৯০০১০", email: "10apbn.int@police.gov.bd", address: "চরকাউয়া, বরিশাল", coveredDistricts: ["বরিশাল", "ভোলা", "পটুয়াখালী", "পিরোজপুর", "বরগুনা", "ঝালকাঠি"] },
+            { district: "Jhalokathi", districtBn: "ঝালকাঠি", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬৯-৬৯০০১০", email: "10apbn.int@police.gov.bd", address: "চরকাউয়া, বরিশাল", coveredDistricts: ["বরিশাল", "ভোলা", "পটুয়াখালী", "পিরোজপুর", "বরগুনা", "ঝালকাঠি"] }
         ];
+
+        window.onload = function() {
+            populateDistrictDropdown(APBN_DISTRICT_DATABASE);
+        };
+
+        function populateDistrictDropdown(items) {
+            const select = document.getElementById('districtSelect');
+            select.innerHTML = '<option value="">-- জেলা নির্বাচন করুন --</option>';
+            items.forEach(item => {
+                const opt = document.createElement('option');
+                opt.value = item.district;
+                opt.textContent = `${item.districtBn} (${item.district})`;
+                select.appendChild(opt);
+            });
+        }
+
+        function filterDistrictOptions() {
+            const search = document.getElementById('districtSearchInput').value.toLowerCase().trim();
+            const filtered = APBN_DISTRICT_DATABASE.filter(i => 
+                i.district.toLowerCase().includes(search) || i.districtBn.includes(search)
+            );
+            populateDistrictDropdown(filtered);
+            if (filtered.length === 1) {
+                document.getElementById('districtSelect').value = filtered[0].district;
+                lookupDistrictAPBn();
+            }
+        }
+
+        function lookupDistrictAPBn() {
+            const selectedVal = document.getElementById('districtSelect').value;
+            const card = document.getElementById('districtResultCard');
+            if (!selectedVal) {
+                card.classList.add('hidden');
+                return;
+            }
+
+            const data = APBN_DISTRICT_DATABASE.find(item => item.district === selectedVal);
+            if (data) {
+                document.getElementById('districtBadge').textContent = `জেলা: ${data.districtBn}`;
+                document.getElementById('districtResultName').textContent = `${data.districtBn} জেলা সাইবার তথ্য`;
+                document.getElementById('districtBattalionName').textContent = data.battalion;
+                document.getElementById('battalionHotline').textContent = data.hotline;
+                document.getElementById('battalionEmail').textContent = data.email;
+                document.getElementById('battalionAddress').textContent = data.address;
+                document.getElementById('callBattalionBtn').href = `tel:${data.hotline}`;
+
+                // অধীনস্থ জেলাসমূহের ট্যাগ যোগ করা
+                const coveredContainer = document.getElementById('coveredDistrictsContainer');
+                const coveredList = document.getElementById('coveredDistrictsList');
+                
+                if (data.coveredDistricts && data.coveredDistricts.length > 0) {
+                    coveredList.innerHTML = '';
+                    data.coveredDistricts.forEach(dist => {
+                        const badge = document.createElement('span');
+                        badge.className = "bg-slate-800 text-cyan-300 border border-cyan-500/30 text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-sm";
+                        badge.textContent = dist;
+                        coveredList.appendChild(badge);
+                    });
+                    coveredContainer.classList.remove('hidden');
+                } else {
+                    coveredContainer.classList.add('hidden');
+                }
+
+                card.classList.remove('hidden');
+            }
 
         let mfsDatabase = [
             { number: "01711000111", type: "ভুয়া পিন/ওটিপি ফাঁদ", reports: 8 },
