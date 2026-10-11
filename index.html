@@ -664,75 +664,10 @@
             { district: "Patuakhali", districtBn: "পটুয়াখালী", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬৯-৬৯০০১০", email: "10apbn.int@police.gov.bd", address: "চরকাউয়া, বরিশাল", coveredDistricts: ["বরিশাল", "ভোলা", "পটুয়াখালী", "পিরোজপুর", "বরগুনা", "ঝালকাঠি"] },
             { district: "Pirojpur", districtBn: "পিরোজপুর", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬9-690010", email: "10apbn.int@police.gov.bd", address: "চরকাউয়া, বরিশাল", coveredDistricts: ["বরিশাল", "ভোলা", "পটুয়াখালী", "পিরোজপুর", "বরগুনা", "ঝালকাঠি"] },
             { district: "Barguna", districtBn: "বরগুনা", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬৯-৬৯০০১০", email: "10apbn.int@police.gov.bd", address: "চরকাউয়া, বরিশাল", coveredDistricts: ["বরিশাল", "ভোলা", "পটুয়াখালী", "পিরোজপুর", "বরগুনা", "ঝালকাঠি"] },
-            { district: "Jhalokathi", districtBn: "ঝালকাঠি", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬৯-৬৯০০১০", email: "10apbn.int@police.gov.bd", address: "চরকাউয়া, বরিশাল", coveredDistricts: ["বরিশাল", "ভোলা", "পটুয়াখালী", "পিরোজপুর", "বরগুনা", "ঝালকাঠি"] }
-        ];
-
-        window.onload = function() {
-            populateDistrictDropdown(APBN_DISTRICT_DATABASE);
-        };
-
-        function populateDistrictDropdown(items) {
-            const select = document.getElementById('districtSelect');
-            select.innerHTML = '<option value="">-- জেলা নির্বাচন করুন --</option>';
-            items.forEach(item => {
-                const opt = document.createElement('option');
-                opt.value = item.district;
-                opt.textContent = `${item.districtBn} (${item.district})`;
-                select.appendChild(opt);
-            });
-        }
-
-        function filterDistrictOptions() {
-            const search = document.getElementById('districtSearchInput').value.toLowerCase().trim();
-            const filtered = APBN_DISTRICT_DATABASE.filter(i => 
-                i.district.toLowerCase().includes(search) || i.districtBn.includes(search)
-            );
-            populateDistrictDropdown(filtered);
-            if (filtered.length === 1) {
-                document.getElementById('districtSelect').value = filtered[0].district;
-                lookupDistrictAPBn();
+            { district: "Jhalokathi", districtBn: "ঝালকাঠি", battalion: "১০ম আর্মড পুলিশ ব্যাটালিয়ন (10 APBn)", hotline: "০১৭৬৯-৬৯০০১০", email: "10apbn.int@police.gov.bd", address: "চরকাউয়া, বরিশাল", coveredDistricts: ["বরিশাল", "ভোলা", "পটুয়াখালী", "পিরোজপুর", "বরগুনা", "ঝালকাঠি"] },
             }
-        }
-
-        function lookupDistrictAPBn() {
-            const selectedVal = document.getElementById('districtSelect').value;
-            const card = document.getElementById('districtResultCard');
-            if (!selectedVal) {
-                card.classList.add('hidden');
-                return;
-            }
-
-            const data = APBN_DISTRICT_DATABASE.find(item => item.district === selectedVal);
-            if (data) {
-                document.getElementById('districtBadge').textContent = `জেলা: ${data.districtBn}`;
-                document.getElementById('districtResultName').textContent = `${data.districtBn} জেলা সাইবার তথ্য`;
-                document.getElementById('districtBattalionName').textContent = data.battalion;
-                document.getElementById('battalionHotline').textContent = data.hotline;
-                document.getElementById('battalionEmail').textContent = data.email;
-                document.getElementById('battalionAddress').textContent = data.address;
-                document.getElementById('callBattalionBtn').href = `tel:${data.hotline}`;
-
-                // অধীনস্থ জেলাসমূহের ট্যাগ যোগ করা
-                const coveredContainer = document.getElementById('coveredDistrictsContainer');
-                const coveredList = document.getElementById('coveredDistrictsList');
-                
-                if (data.coveredDistricts && data.coveredDistricts.length > 0) {
-                    coveredList.innerHTML = '';
-                    data.coveredDistricts.forEach(dist => {
-                        const badge = document.createElement('span');
-                        badge.className = "bg-slate-800 text-cyan-300 border border-cyan-500/30 text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-sm";
-                        badge.textContent = dist;
-                        coveredList.appendChild(badge);
-                    });
-                    coveredContainer.classList.remove('hidden');
-                } else {
-                    coveredContainer.classList.add('hidden');
-                }
-
-                card.classList.remove('hidden');
-            }
-
-        let mfsDatabase = [
+      
+      let mfsDatabase = [
             { number: "01711000111", type: "ভুয়া পিন/ওটিপি ফাঁদ", reports: 8 },
             { number: "01822999000", type: "অনলাইন শপ পেমেন্ট স্ক্যাম", reports: 5 }
         ];
