@@ -285,7 +285,46 @@
                 </form>
             </div>
         </section>
-    
+        
+        <!-- SECTION 3: Cyber Helpdesk for Women & Children -->
+        <section class="glass-card p-6 md:p-8 border-t-4 border-t-rose-400 space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
+                <div class="p-3.5 bg-gradient-to-tr from-rose-500 to-pink-600 rounded-2xl text-white shadow-lg shadow-rose-500/30">
+                    <i class="fa-solid fa-venus-mars text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">৩. নারী ও শিশুদের বিশেষ সাইবার হেল্পডেস্ক</h2>
+                    <p class="text-xs md:text-sm text-pink-200">সম্পূর্ণ গোপনীয়তার সাথে সাহায্য গ্রহণ ও অভিযোগ জমা</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleWomenReport(event)" class="space-y-3 bg-slate-900/90 p-5 rounded-2xl border border-slate-800">
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">আপনার নাম/ছদ্মনাম (ঐচ্ছিক)</label>
+                    <input type="text" id="wName" placeholder="গোপন রাখতে ফাঁকা রাখুন" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">যোগাযোগের মোবাইল বা ইমেইল *</label>
+                    <input type="text" required id="wContact" placeholder="যোগাযোগের নম্বর/ইমেইল" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">সমস্যার বিষয় *</label>
+                    <select id="wSubject" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white">
+                        <option value="সাইবার বুলিং">সাইবার বুলিং ও কটূক্তি</option>
+                        <option value="ফেক আইডি হেনস্তা">ফেক আইডি দিয়ে হেনস্তা</option>
+                        <option value="ছবি ব্ল্যাকমেইল">ছবি দিয়ে ব্ল্যাকমেইল</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">ঘটনার বিবরণ *</label>
+                    <textarea required id="wDetails" rows="3" placeholder="ঘটনাটির বিবরণ লিখুন..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white"></textarea>
+                </div>
+                <button type="submit" class="w-full py-2.5 bg-gradient-to-r from-rose-600 to-pink-600 text-white font-bold text-xs rounded-xl shadow-lg">
+                    নিরাপদে অভিযোগ জমা দিন
+                </button>
+            </form>
+        </section>
+        
         <!-- SECTION 4: Fake Online Shop Checker & Form underneath -->
         <section class="glass-card p-6 md:p-8 border-t-4 border-t-purple-400 space-y-6">
             <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
@@ -293,7 +332,7 @@
                     <i class="fa-solid fa-store text-2xl"></i>
                 </div>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-white">৩. ভুয়া অনলাইন শপ ও ফেইসবুক পেজ চেকার</h2>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">৪. ভুয়া অনলাইন শপ ও ফেইসবুক পেজ চেকার</h2>
                     <p class="text-xs md:text-sm text-purple-200">অনলাইন পেজের লিংক যাচাই করুন ও ভুয়া পেজের তথ্য জমা দিন</p>
                 </div>
             </div>
@@ -347,7 +386,7 @@
                     <i class="fa-solid fa-user-shield text-2xl"></i>
                 </div>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-white">৪. নাগরিক সুরক্ষা ও স্মার্ট অনলাইন টুলস</h2>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">৫. নাগরিক সুরক্ষা ও স্মার্ট অনলাইন টুলস</h2>
                     <p class="text-xs md:text-sm text-emerald-200">ফিশিং লিংক চেকার, পাসওয়ার্ড স্ট্রেন্থ ও সোশ্যাল মিডিয়া রিকভারি</p>
                 </div>
             </div>
@@ -415,48 +454,7 @@
                 </div>
             </div>
         </section>
-
-          <!-- SECTION 3: Cyber Helpdesk for Women & Children -->
-        <section class="glass-card p-6 md:p-8 border-t-4 border-t-rose-400 space-y-6">
-            <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
-                <div class="p-3.5 bg-gradient-to-tr from-rose-500 to-pink-600 rounded-2xl text-white shadow-lg shadow-rose-500/30">
-                    <i class="fa-solid fa-venus-mars text-2xl"></i>
-                </div>
-                <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-white">৭. নারী ও শিশুদের বিশেষ সাইবার হেল্পডেস্ক</h2>
-                    <p class="text-xs md:text-sm text-pink-200">সম্পূর্ণ গোপনীয়তার সাথে সাহায্য গ্রহণ ও অভিযোগ জমা</p>
-                </div>
-            </div>
-
-            <form onsubmit="handleWomenReport(event)" class="space-y-3 bg-slate-900/90 p-5 rounded-2xl border border-slate-800">
-                <div>
-                    <label class="block text-xs text-slate-300 mb-1">আপনার নাম/ছদ্মনাম (ঐচ্ছিক)</label>
-                    <input type="text" id="wName" placeholder="গোপন রাখতে ফাঁকা রাখুন" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white">
-                </div>
-                <div>
-                    <label class="block text-xs text-slate-300 mb-1">যোগাযোগের মোবাইল বা ইমেইল *</label>
-                    <input type="text" required id="wContact" placeholder="যোগাযোগের নম্বর/ইমেইল" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white">
-                </div>
-                <div>
-                    <label class="block text-xs text-slate-300 mb-1">সমস্যার বিষয় *</label>
-                    <select id="wSubject" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white">
-                        <option value="সাইবার বুলিং">সাইবার বুলিং ও কটূক্তি</option>
-                        <option value="ফেক আইডি হেনস্তা">ফেক আইডি দিয়ে হেনস্তা</option>
-                        <option value="ছবি ব্ল্যাকমেইল">ছবি দিয়ে ব্ল্যাকমেইল</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs text-slate-300 mb-1">ঘটনার বিবরণ *</label>
-                    <textarea required id="wDetails" rows="3" placeholder="ঘটনাটির বিবরণ লিখুন..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white"></textarea>
-                </div>
-                <button type="submit" class="w-full py-2.5 bg-gradient-to-r from-rose-600 to-pink-600 text-white font-bold text-xs rounded-xl shadow-lg">
-                    নিরাপদে অভিযোগ জমা দিন
-                </button>
-            </form>
-        </section>
-
-    </main>
-
+        
         <!-- SECTION 6: Emergency AI Bot & Digital GD -->
         <section class="glass-card p-6 md:p-8 border-t-4 border-t-cyan-500 space-y-6">
             <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
@@ -464,7 +462,7 @@
                     <i class="fa-solid fa-headset text-2xl"></i>
                 </div>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-white">৫. জরুরি এআই চ্যাটবট, জিপিএস ও ডিজিটাল জিডি</h2>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">৬. জরুরি এআই চ্যাটবট, জিপিএস ও ডিজিটাল জিডি</h2>
                     <p class="text-xs md:text-sm text-cyan-200">APBn Cyber Bot এবং ডিজিটাল জিডি অ্যাসিস্ট্যান্ট</p>
                 </div>
             </div>
@@ -511,7 +509,7 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- SECTION 7: Quiz & Certificate Generator -->
         <section class="glass-card p-6 md:p-8 border-t-4 border-t-amber-400 space-y-6">
             <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
@@ -519,7 +517,7 @@
                     <i class="fa-solid fa-award text-2xl"></i>
                 </div>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-white">৬. সাইবার সচেতনতা কুইজ ও ডিজিটাল সনদপত্র</h2>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">৭. সাইবার সচেতনতা কুইজ ও ডিজিটাল সনদপত্র</h2>
                     <p class="text-xs md:text-sm text-amber-200">কুইজ খেলে নিজের নামে কাস্টমাইজড সার্টিফিকেট ডাউনলোড করুন</p>
                 </div>
             </div>
